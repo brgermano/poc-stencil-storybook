@@ -1,0 +1,59 @@
+/* GENERICS */
+.button {
+	cursor: pointer;
+	transition: .5s ease;
+	border-radius: 3px;
+}
+
+.button:hover {
+	box-shadow: 2px 2px 5px #999;
+	transition: .5s ease;
+}
+
+/* TYPES */
+.primary {
+	border: none;
+	background-color: #5851ff;
+	color: #fff;
+}
+
+.secundary {
+	border: 2px solid #5851ff;
+	background-color: #fff;
+	color: #5851ff;
+}
+
+.custom {
+	border: none;
+	background-color: #edcc06;
+	color: #fff;
+}
+
+/* SIZES */
+.small {
+	font-size: 12px;
+	width: 82px;
+	height: 32px;
+}
+
+.medium {
+	font-size: 14px;
+	width: 106px;
+	height: 36px;
+}
+
+.large {
+	font-size: 16px;
+	width: 138px;
+	height: 40px;
+}
+
+/* DISABLED */
+.disabled {
+	opacity: .5;
+	cursor: not-allowed;
+}
+
+.disabled:hover {
+	box-shadow: none;
+}
