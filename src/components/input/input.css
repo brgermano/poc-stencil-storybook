@@ -1,0 +1,14 @@
+label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 5px;
+	color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #333;
+}
