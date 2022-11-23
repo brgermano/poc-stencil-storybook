@@ -1,4 +1,5 @@
 import {defineCustomElements} from '../loader';
+import { themes } from '@storybook/theming'
 
 defineCustomElements();
 
@@ -9,5 +10,8 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  docs: {
+    theme: themes.dark,
   },
 }

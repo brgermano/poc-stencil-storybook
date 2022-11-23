@@ -26,10 +26,23 @@ export namespace Components {
         "size": string;
         "type": string;
     }
+    interface RiInput {
+        "autocomplete": string;
+        "label": string;
+        "maxlength": string | number;
+        "minlength": string | number;
+        "name": string;
+        "placeholder": string;
+        "type": string;
+    }
 }
 export interface RiButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRiButtonElement;
+}
+export interface RiInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRiInputElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -44,9 +57,16 @@ declare global {
         prototype: HTMLRiButtonElement;
         new (): HTMLRiButtonElement;
     };
+    interface HTMLRiInputElement extends Components.RiInput, HTMLStencilElement {
+    }
+    var HTMLRiInputElement: {
+        prototype: HTMLRiInputElement;
+        new (): HTMLRiInputElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "ri-button": HTMLRiButtonElement;
+        "ri-input": HTMLRiInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -71,9 +91,20 @@ declare namespace LocalJSX {
         "size"?: string;
         "type"?: string;
     }
+    interface RiInput {
+        "autocomplete"?: string;
+        "label"?: string;
+        "maxlength"?: string | number;
+        "minlength"?: string | number;
+        "name"?: string;
+        "onInputEmitter"?: (event: RiInputCustomEvent<any>) => void;
+        "placeholder"?: string;
+        "type"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "ri-button": RiButton;
+        "ri-input": RiInput;
     }
 }
 export { LocalJSX as JSX };
@@ -82,6 +113,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "ri-button": LocalJSX.RiButton & JSXBase.HTMLAttributes<HTMLRiButtonElement>;
+            "ri-input": LocalJSX.RiInput & JSXBase.HTMLAttributes<HTMLRiInputElement>;
         }
     }
 }
