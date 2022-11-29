@@ -10,22 +10,19 @@ export default {
     minlength: { control: 'number' },
     maxlength: { control: 'number' },
     placeholder: { control: 'text' },
-    autocomplete: { control: 'boolean' },
     inputEmitter: { action: 'inputEmitter' },
   },
 }
 
 const Template = (args) => `
   <ri-input
-    id=${args.name}
-    name=${args.name}
-    type=${args.type}
-    label=${args.label}
-    minlength=${args.minlength}
-    maxlength=${args.maxlength}
-    placeholder=${args.placeholder}
-    autocomplete=${args.autocomplete}
-    onInput=${args.inputEmitter}
+    name="${args.name}"
+    type="${args.type}"
+    label="${args.label}"
+    minlength="${args.minlength}"
+    maxlength="${args.maxlength}"
+    placeholder="${args.placeholder}"
+    inputEmitter="${args.inputEmitter}"
   >
   </ri-input>
 `;
@@ -33,13 +30,12 @@ const Template = (args) => `
 export const Input = Template.bind({});
 
 Input.args = {
-  label: 'Usuário',
+  label: 'Nome completo',
+  placeholder: 'Digite aqui seu nome',
   type: 'text',
-  maxlength: 15,
   minlength: 0,
-  placeholder: 'Nome',
-  autocomplete: true,
-  name: 'Name do componente',
-  onInput: (event) => console.log(event)
+  maxlength: 15,
+  name: 'nome-usuario',
+  inputEmitter: (event) => console.log(event)
 };
 
