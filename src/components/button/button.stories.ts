@@ -13,6 +13,7 @@ export default {
       defaultValue: false,
       control: 'boolean' 
     },
+    clickEmitter: { action: 'clickEmitter' },
   }
 }
 
