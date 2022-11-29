@@ -1,5 +1,5 @@
 import { createHeader } from './Header';
-
+/*
 export default {
   title: 'Example/Header',
   parameters: {
@@ -13,6 +13,7 @@ export default {
     onCreateAccount: { action: 'onCreateAccount' },
   },
 };
+*/
 
 const Template = (args) => createHeader(args);
 

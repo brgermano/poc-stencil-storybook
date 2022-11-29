@@ -1,11 +1,11 @@
 export default {
   title: 'Input/RiInput',
   argTypes: {
+    name: { control: 'text' },
     type: {
       control: 'select',
       options: ['text', 'number', 'password']
     },
-    name: { control: 'text' },
     label: { control: 'text' },
     minlength: { control: 'number' },
     maxlength: { control: 'number' },
@@ -18,8 +18,9 @@ export default {
 const Template = (args) => `
   <ri-input
     id=${args.name}
-    type=${args.type}
     name=${args.name}
+    type=${args.type}
+    label=${args.label}
     minlength=${args.minlength}
     maxlength=${args.maxlength}
     placeholder=${args.placeholder}
@@ -32,13 +33,13 @@ const Template = (args) => `
 export const Input = Template.bind({});
 
 Input.args = {
-  label: 'Descrição',
-  name: 'input-componet',
-  type: 'password',
-  maxlength: 10,
+  label: 'Usuário',
+  type: 'text',
+  maxlength: 15,
   minlength: 0,
+  placeholder: 'Nome',
   autocomplete: true,
-  placeholder: 'Escreva algo bonito aqui :)',
+  name: 'Name do componente',
   onInput: (event) => console.log(event)
 };
 
