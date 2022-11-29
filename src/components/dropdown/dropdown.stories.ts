@@ -6,30 +6,6 @@ export default {
     values: {
       control: 'select',
       options: ['Argo', 'Celta', 'Cruze', '118i'],
-      // options: [
-      //   {
-      //     id: 0,
-      //     name: 'Argo',
-      //     company: 'Fiat'
-      //   },
-      //   {
-      //     id: 0,
-      //     name: 'Celta',
-      //     model: 2008,
-      //   },
-      //   {
-      //     id: 0,
-      //     name: 'Cruze',
-      //     model: 2014,
-      //     company: 'GM'
-      //   },
-      //   {
-      //     id: 0,
-      //     name: '118i',
-      //     model: 2016,
-      //     company: 'BMW'
-      //   }
-      // ],
     },
     changeEmitter: { action: 'changeEmitter' },
   },
@@ -37,9 +13,10 @@ export default {
 
 const Template = (args) => `
   <ri-dropdown
-    name=${args.name}
-    label=${args.label}
-    onChange=${args.changeEmitter}
+    name="${args.name}"
+    label="${args.label}"
+    values="${args.values}"
+    onChange="${args.changeEmitter}"
   >
   </ri-dropdown>
 `;
@@ -47,8 +24,36 @@ const Template = (args) => `
 export const Dropdown = Template.bind({});
 
 Dropdown.args = {
-  name: 'dropdown-componet',
+  name: 'dropdown',
   label: 'Selecione um item',
-  onChange: (event) => console.log(event)
 };
 
+// export const Select = Template.bind({});
+// Select.args = {
+//   name: 'select-componet',
+//   label: 'Selecione um item',
+//   values: [
+//     {
+//       id: 0,
+//       name: 'Argo',
+//       company: 'Fiat'
+//     },
+//     {
+//       id: 0,
+//       name: 'Celta',
+//       model: 2008,
+//     },
+//     {
+//       id: 0,
+//       name: 'Cruze',
+//       model: 2014,
+//       company: 'GM'
+//     },
+//     {
+//       id: 0,
+//       name: '118i',
+//       model: 2016,
+//       company: 'BMW'
+//     }
+//   ],
+// }

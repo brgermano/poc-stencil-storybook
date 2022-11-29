@@ -1,0 +1,9 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown select {
+  margin-top: 10px;
+  width: 50%;
+}
