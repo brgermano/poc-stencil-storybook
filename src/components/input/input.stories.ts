@@ -27,9 +27,9 @@ const Template = (args) => `
   </ri-input>
 `;
 
-export const Input = Template.bind({});
+export const Text = Template.bind({});
 
-Input.args = {
+Text.args = {
   label: 'Nome completo',
   placeholder: 'Digite aqui seu nome',
   type: 'text',
@@ -39,3 +39,26 @@ Input.args = {
   inputEmitter: (event) => console.log(event)
 };
 
+export const Number = Template.bind({});
+
+Number.args = {
+  label: 'Idade',
+  placeholder: 'Digite aqui sua idade',
+  type: 'number',
+  minlength: 0,
+  maxlength: 2,
+  name: 'idade-usuario',
+  inputEmitter: (event) => console.log(event)
+};
+
+export const Password = Template.bind({});
+
+Password.args = {
+  label: 'Senha',
+  placeholder: 'Digite aqui sua senha',
+  type: 'password',
+  minlength: 0,
+  maxlength: 10,
+  name: 'senha-usuario',
+  inputEmitter: (event) => console.log(event)
+};
