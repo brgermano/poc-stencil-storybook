@@ -2,7 +2,6 @@ import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
 	tag: 'ri-dropdown',
-	styleUrl: 'dropdown.css',
 	shadow: true,
 })
 

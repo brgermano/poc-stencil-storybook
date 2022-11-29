@@ -1,5 +1,5 @@
 export default {
-  title: 'Buttons/RiButton',
+  title: 'Button/RiButton',
   argTypes: {
     type: {
       control: { type: 'select' },
@@ -13,6 +13,7 @@ export default {
       defaultValue: false,
       control: 'boolean' 
     },
+    clickEmitter: { action: 'clickEmitter' },
   }
 }
 

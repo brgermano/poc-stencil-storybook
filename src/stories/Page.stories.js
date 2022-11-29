@@ -1,6 +1,7 @@
 import { within, userEvent } from '@storybook/testing-library';
 import { createPage } from './Page';
 
+/*
 export default {
   title: 'Example/Page',
   parameters: {
@@ -8,7 +9,7 @@ export default {
     layout: 'fullscreen',
   },
 };
-
+*/
 const Template = () => createPage();
 
 export const LoggedOut = Template.bind({});
