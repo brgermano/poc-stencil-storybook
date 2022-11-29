@@ -24,10 +24,13 @@ export class RiInput {
 	render() {
 		return (
       <Host>
-        { this.label
-            ? <label htmlFor={this.name}>{this.label}</label>
-            : ''
-        }
+				<div>
+					{ this.label
+							? <label htmlFor={this.name}>{this.label}</label>
+							: ''
+					}
+				</div>
+
         <input
           id={this.name}
           type={this.type}
