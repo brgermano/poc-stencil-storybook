@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/RiInput',
+  title: 'Select/RiDropdown',
   argTypes: {
     name: { control: 'text' },
     label: { control: 'text' },

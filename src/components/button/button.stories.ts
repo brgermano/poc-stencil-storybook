@@ -1,5 +1,5 @@
 export default {
-  title: 'Buttons/RiButton',
+  title: 'Button/RiButton',
   argTypes: {
     type: {
       control: { type: 'select' },

@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/RiInput',
+  title: 'Input/RiInput',
   argTypes: {
     type: {
       control: 'select',
