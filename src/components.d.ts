@@ -26,6 +26,11 @@ export namespace Components {
         "size": string;
         "type": string;
     }
+    interface RiDropdown {
+        "label": string;
+        "name": string;
+        "values": string[];
+    }
     interface RiInput {
         "autocomplete": string;
         "label": string;
@@ -39,6 +44,10 @@ export namespace Components {
 export interface RiButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRiButtonElement;
+}
+export interface RiDropdownCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRiDropdownElement;
 }
 export interface RiInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -57,6 +66,12 @@ declare global {
         prototype: HTMLRiButtonElement;
         new (): HTMLRiButtonElement;
     };
+    interface HTMLRiDropdownElement extends Components.RiDropdown, HTMLStencilElement {
+    }
+    var HTMLRiDropdownElement: {
+        prototype: HTMLRiDropdownElement;
+        new (): HTMLRiDropdownElement;
+    };
     interface HTMLRiInputElement extends Components.RiInput, HTMLStencilElement {
     }
     var HTMLRiInputElement: {
@@ -66,6 +81,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "ri-button": HTMLRiButtonElement;
+        "ri-dropdown": HTMLRiDropdownElement;
         "ri-input": HTMLRiInputElement;
     }
 }
@@ -91,6 +107,12 @@ declare namespace LocalJSX {
         "size"?: string;
         "type"?: string;
     }
+    interface RiDropdown {
+        "label"?: string;
+        "name"?: string;
+        "onChangeEmitter"?: (event: RiDropdownCustomEvent<any>) => void;
+        "values"?: string[];
+    }
     interface RiInput {
         "autocomplete"?: string;
         "label"?: string;
@@ -104,6 +126,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "my-component": MyComponent;
         "ri-button": RiButton;
+        "ri-dropdown": RiDropdown;
         "ri-input": RiInput;
     }
 }
@@ -113,6 +136,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "ri-button": LocalJSX.RiButton & JSXBase.HTMLAttributes<HTMLRiButtonElement>;
+            "ri-dropdown": LocalJSX.RiDropdown & JSXBase.HTMLAttributes<HTMLRiDropdownElement>;
             "ri-input": LocalJSX.RiInput & JSXBase.HTMLAttributes<HTMLRiInputElement>;
         }
     }

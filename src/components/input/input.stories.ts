@@ -32,10 +32,13 @@ const Template = (args) => `
 export const Input = Template.bind({});
 
 Input.args = {
+  label: 'Descrição',
   name: 'input-componet',
   type: 'password',
   maxlength: 10,
+  minlength: 0,
   autocomplete: true,
-  placeholder: 'Escreva algo bonito aqui :)'
+  placeholder: 'Escreva algo bonito aqui :)',
+  onInput: (event) => console.log(event)
 };
 
