@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
+import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
 	tag: 'ri-dropdown',
@@ -21,7 +21,7 @@ export class RiDropdown {
 
 	render() {
 		return (
-      <Host>
+      <div class="dropdown">
         {this.label
           ? <label htmlFor={this.name}>{this.label}</label>
           : ''
@@ -31,13 +31,13 @@ export class RiDropdown {
           name={this.name}
           onChange={this.emitChange}
         >
-          {this.values.map(item => 
+          {this.values?.map(item => 
             <option value={item}>
               {item}
             </option>
           )}
         </select>
-      </Host>
+      </div>
 		);
 	}
 }
