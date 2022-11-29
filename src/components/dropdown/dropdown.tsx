@@ -9,7 +9,7 @@ import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
 export class RiDropdown {
   @Prop() name: string
 	@Prop() label: string
-	@Prop() values
+	@Prop() values: string[]
   @Event() changeEmitter: EventEmitter
 
   emitChange = (e: Event) => {
@@ -32,8 +32,8 @@ export class RiDropdown {
           onChange={this.emitChange}
         >
           {this.values.map(item => 
-            <option value={item.name || item}>
-              {item.name || item}
+            <option value={item}>
+              {item}
             </option>
           )}
         </select>
