@@ -16,7 +16,7 @@ const Template = (args) => `
     name="${args.name}"
     label="${args.label}"
     values="${args.values}"
-    onChange="${args.changeEmitter}"
+    changeEmitter="${args.changeEmitter}"
   >
   </ri-dropdown>
 `;
@@ -24,36 +24,8 @@ const Template = (args) => `
 export const Dropdown = Template.bind({});
 
 Dropdown.args = {
-  name: 'dropdown',
+  name: 'dropdown-carros',
   label: 'Selecione um item',
+  values: 'Argo, Celta, Cruze, 118i',
+  changeEmitter: () => {},
 };
-
-// export const Select = Template.bind({});
-// Select.args = {
-//   name: 'select-componet',
-//   label: 'Selecione um item',
-//   values: [
-//     {
-//       id: 0,
-//       name: 'Argo',
-//       company: 'Fiat'
-//     },
-//     {
-//       id: 0,
-//       name: 'Celta',
-//       model: 2008,
-//     },
-//     {
-//       id: 0,
-//       name: 'Cruze',
-//       model: 2014,
-//       company: 'GM'
-//     },
-//     {
-//       id: 0,
-//       name: '118i',
-//       model: 2016,
-//       company: 'BMW'
-//     }
-//   ],
-// }

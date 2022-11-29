@@ -2,13 +2,14 @@ import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
 	tag: 'ri-dropdown',
+  styleUrl: 'dropdown.css',
 	shadow: true,
 })
 
 export class RiDropdown {
   @Prop() name: string
 	@Prop() label: string
-	@Prop() values: string[]
+	@Prop() values: string
   @Event() changeEmitter: EventEmitter
 
   emitChange = (e: Event) => {
@@ -16,6 +17,17 @@ export class RiDropdown {
     const { selectedIndex, options } = select 
     const optionSelected = options[selectedIndex]
     this.changeEmitter.emit(optionSelected.value)
+  }
+
+  renderOptions = () => {
+    const valueString = this.values;
+
+    const valueArray = valueString.split(', ')
+    
+    return valueArray.map(item => 
+     <option key={item} value={item}>
+       {item}
+     </option>)
   }
 
 	render() {
@@ -30,11 +42,7 @@ export class RiDropdown {
           name={this.name}
           onChange={this.emitChange}
         >
-          {this.values?.map(item => 
-            <option value={item}>
-              {item}
-            </option>
-          )}
+          {this.renderOptions()}
         </select>
       </div>
 		);
