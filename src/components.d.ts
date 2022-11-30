@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface DropdownWrapper {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -29,7 +31,7 @@ export namespace Components {
     interface RiDropdown {
         "label": string;
         "name": string;
-        "values": string;
+        "values": Array<string>;
     }
     interface RiInput {
         "autocomplete": string;
@@ -54,6 +56,12 @@ export interface RiInputCustomEvent<T> extends CustomEvent<T> {
     target: HTMLRiInputElement;
 }
 declare global {
+    interface HTMLDropdownWrapperElement extends Components.DropdownWrapper, HTMLStencilElement {
+    }
+    var HTMLDropdownWrapperElement: {
+        prototype: HTMLDropdownWrapperElement;
+        new (): HTMLDropdownWrapperElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -79,6 +87,7 @@ declare global {
         new (): HTMLRiInputElement;
     };
     interface HTMLElementTagNameMap {
+        "dropdown-wrapper": HTMLDropdownWrapperElement;
         "my-component": HTMLMyComponentElement;
         "ri-button": HTMLRiButtonElement;
         "ri-dropdown": HTMLRiDropdownElement;
@@ -86,6 +95,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface DropdownWrapper {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -111,7 +122,7 @@ declare namespace LocalJSX {
         "label"?: string;
         "name"?: string;
         "onChangeEmitter"?: (event: RiDropdownCustomEvent<any>) => void;
-        "values"?: string;
+        "values"?: Array<string>;
     }
     interface RiInput {
         "autocomplete"?: string;
@@ -124,6 +135,7 @@ declare namespace LocalJSX {
         "type"?: string;
     }
     interface IntrinsicElements {
+        "dropdown-wrapper": DropdownWrapper;
         "my-component": MyComponent;
         "ri-button": RiButton;
         "ri-dropdown": RiDropdown;
@@ -134,6 +146,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "dropdown-wrapper": LocalJSX.DropdownWrapper & JSXBase.HTMLAttributes<HTMLDropdownWrapperElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "ri-button": LocalJSX.RiButton & JSXBase.HTMLAttributes<HTMLRiButtonElement>;
             "ri-dropdown": LocalJSX.RiDropdown & JSXBase.HTMLAttributes<HTMLRiDropdownElement>;

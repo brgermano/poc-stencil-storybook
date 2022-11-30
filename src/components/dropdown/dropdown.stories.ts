@@ -26,6 +26,6 @@ export const Dropdown = Template.bind({});
 Dropdown.args = {
   name: 'dropdown-carros',
   label: 'Selecione um item',
-  values: 'Argo, Celta, Cruze, 118i',
+  values: ['Argo', 'Celta', 'Cruze', '118i'],
   changeEmitter: () => {},
 };
