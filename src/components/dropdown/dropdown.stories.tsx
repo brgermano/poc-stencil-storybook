@@ -1,50 +1,27 @@
-import { html } from 'lit-html';
-//import { h } from '@stencil/core';
-
 export default {
   title: 'Select/RiDropdown',
   argTypes: {
     name: { control: 'text' },
     label: { control: 'text' },
-/*    values: {
-      control: '',
-      options: '["Argo", "Celta"]',
+    values: {
+      options: ["Argo", "Celta"],
+      control: {
+        type: 'array',
+      },
+      selected: "Argo"
     },
-
-  */
     onChangeEmitter: { action: 'changeEmitter' },
   },
 }
 
-const Template = (args: any) => {
-  const valueSelected = (value: CustomEvent) => {
-    console.log('Selecionado>', value.detail)
-  }
-
-  console.log('args.values', args.values)
-
-  const insertValues = (values: any) => {
-    console.log('values>>>', values)
-    console.log('values type>>>', typeof values)
-
-    setTimeout(() => {
-      const selectElement = document.querySelector('ri-dropdown');
-      
-      selectElement.values = values;
-    }, 1000)
-  }
-
-  return (
-    html`
+const Template = (args: any) => `
     <ri-dropdown
-      name=${args.name}
-      label=${args.label}
-      onChangeEmitter=${valueSelected}
+      name="${args.name}"
+      label="${args.label}"
+      values="${args.values}"
+      onChangeEmitter="${args.onChangeEmitter}"
     ></ri-dropdown>
-    ${insertValues(args.values)}
     `
-  )
-}
 
 /*
 const Template = (args: any) => {
@@ -66,9 +43,13 @@ const Template = (args: any) => {
 
 export const Dropdown = Template.bind({});
 
+const valueSelected = (value: CustomEvent) => {
+  console.log(value.detail)
+}
+
 Dropdown.args = {
   name: 'dropdown-carros',
   label: 'Selecione um item',
   values: ["Argo", "Celta"],
-//  onChangeEmitter: () => {},
+  onChangeEmitter: valueSelected,
 };

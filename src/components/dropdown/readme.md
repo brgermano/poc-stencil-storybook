@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type       | Default     |
-| -------- | --------- | ----------- | ---------- | ----------- |
-| `label`  | `label`   |             | `string`   | `undefined` |
-| `name`   | `name`    |             | `string`   | `undefined` |
-| `values` | --        |             | `string[]` | `undefined` |
+| Property | Attribute | Description | Type     | Default     |
+| -------- | --------- | ----------- | -------- | ----------- |
+| `label`  | `label`   |             | `string` | `undefined` |
+| `name`   | `name`    |             | `string` | `undefined` |
+| `values` | `values`  |             | `string` | `undefined` |
 
 
 ## Events

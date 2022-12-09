@@ -1,3 +1,4 @@
+/*
 export default {
   title: 'Components/MyComponent',
 }
@@ -10,3 +11,4 @@ Example.args = {
   middle: 'The',
   last: 'Pooh'
 };
+*/
