@@ -27,9 +27,9 @@ export namespace Components {
         "type": string;
     }
     interface RiDropdown {
+        "data"?: any[];
         "label": string;
         "name": string;
-        "values"?: string;
     }
     interface RiInput {
         "autocomplete": string;
@@ -108,10 +108,10 @@ declare namespace LocalJSX {
         "type"?: string;
     }
     interface RiDropdown {
+        "data"?: any[];
         "label"?: string;
         "name"?: string;
         "onChangeEmitter"?: (event: RiDropdownCustomEvent<any>) => void;
-        "values"?: string;
     }
     interface RiInput {
         "autocomplete"?: string;

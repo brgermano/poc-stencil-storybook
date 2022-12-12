@@ -3,25 +3,36 @@ export default {
   argTypes: {
     name: { control: 'text' },
     label: { control: 'text' },
-    values: {
-      options: ["Argo", "Celta"],
+    data: {
       control: {
         type: 'array',
+        options: ["Argo", "Celta"],
       },
-      selected: "Argo"
     },
     onChangeEmitter: { action: 'changeEmitter' },
   },
 }
 
-const Template = (args: any) => `
+function insertValues(data: Array<String>) {
+  setTimeout(() => {
+    const dropdownComponent = document.getElementById('drop-id') as any;
+    dropdownComponent.data = data;
+  }, 500)
+}
+
+const Template = (args: any) => {
+  insertValues(args.data)
+
+  return (`
     <ri-dropdown
+      id="drop-id"
       name="${args.name}"
       label="${args.label}"
-      values="${args.values}"
       onChangeEmitter="${args.onChangeEmitter}"
-    ></ri-dropdown>
-    `
+    >
+    </ri-dropdown>
+  `)
+}
 
 /*
 const Template = (args: any) => {
@@ -50,6 +61,6 @@ const valueSelected = (value: CustomEvent) => {
 Dropdown.args = {
   name: 'dropdown-carros',
   label: 'Selecione um item',
-  values: ["Argo", "Celta"],
   onChangeEmitter: valueSelected,
+  data: ['Item 1', 'Item 2']
 };

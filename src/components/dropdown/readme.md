@@ -9,9 +9,9 @@
 
 | Property | Attribute | Description | Type     | Default     |
 | -------- | --------- | ----------- | -------- | ----------- |
+| `data`   | --        |             | `any[]`  | `['']`      |
 | `label`  | `label`   |             | `string` | `undefined` |
 | `name`   | `name`    |             | `string` | `undefined` |
-| `values` | `values`  |             | `string` | `undefined` |
 
 
 ## Events
