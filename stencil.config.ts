@@ -1,8 +1,13 @@
 import { Config } from '@stencil/core';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
-  namespace: 'poc-storybook',
+  namespace: 'brgermano-poc-storybook',
   outputTargets: [
+    reactOutputTarget({
+      componentCorePackage: 'brgermano-poc-storybook',
+      proxiesFile: '../../generated/ui-components-react/src/components.ts'
+    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',
