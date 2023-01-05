@@ -1,7 +1,7 @@
 {
-  "name": "brgermano-poc-storybook",
-  "version": "0.0.4",
-  "description": "Stencil Component Starter",
+  "name": "moskit-rock-it-stencil",
+  "version": "0.0.5",
+  "description": "Moskit Design System",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -9,10 +9,10 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/poc-storybook/poc-storybook.esm.js",
+  "unpkg": "dist/moskit-rock-it-stencil/moskit-rock-it-stencil.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/moskitcrm/moskit-rock-it"
   },
   "files": [
     "dist/",
